@@ -41,7 +41,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.3 }}
               className="text-6xl md:text-8xl font-display font-light leading-tight tracking-wide"
             >
-              Barbería Urban
+              Barbería Italiana
             </motion.h1>
 
             <motion.div

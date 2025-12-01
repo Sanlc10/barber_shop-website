@@ -29,7 +29,7 @@ function App() {
                 <Scissors className="w-5 h-5 text-primary" />
               </div>
               <span className="text-xl font-display font-light tracking-wide">
-                Barbería Urban
+                Barbería Italiana
               </span>
             </div>
 
@@ -130,7 +130,7 @@ function App() {
                   <Scissors className="w-4 h-4 text-primary" />
                 </div>
                 <span className="text-lg font-display font-light tracking-wide">
-                  Barbería Urban
+                  Barbería Italiana
                 </span>
               </div>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
@@ -170,7 +170,7 @@ function App() {
                 <p>Calle Principal 123</p>
                 <p>28001 Madrid, España</p>
                 <p className="hover:text-primary transition-colors cursor-pointer">+34 600 000 000</p>
-                <p className="hover:text-primary transition-colors cursor-pointer">info@barberiaurban.com</p>
+                <p className="hover:text-primary transition-colors cursor-pointer">info@barberiaitaliana.com</p>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ function App() {
           {/* Bottom bar */}
           <div className="pt-8 border-t border-border/10 text-center">
             <p className="text-xs text-muted-foreground font-light tracking-wide">
-              © 2024 Barbería Urban. Todos los derechos reservados.
+              © 2024 Barbería Italiana. Todos los derechos reservados.
             </p>
           </div>
         </div>

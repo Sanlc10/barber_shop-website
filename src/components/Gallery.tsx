@@ -1,35 +1,47 @@
 import { motion } from 'framer-motion';
+import fadeClasico from '../assets/fade_clasico.png';
+import barbaDefinida from '../assets/barba_definida.png';
+import estiloUrbano from '../assets/estilo_urbano.png';
+import degradadoPremium from '../assets/degradado_premium.png';
+import lookProfesional from '../assets/look_profesional.png';
+import diseñoPersonalizado from '../assets/diseño_personalizado.png';
 
 const galleryItems = [
   {
     id: 1,
     title: 'Fade Clásico',
     category: 'Corte',
+    image: fadeClasico,
   },
   {
     id: 2,
     title: 'Barba Definida',
     category: 'Barbería',
+    image: barbaDefinida,
   },
   {
     id: 3,
     title: 'Estilo Urbano',
     category: 'Corte',
+    image: estiloUrbano,
   },
   {
     id: 4,
     title: 'Degradado Premium',
     category: 'Fade',
+    image: degradadoPremium,
   },
   {
     id: 5,
     title: 'Look Profesional',
     category: 'Corte',
+    image: lookProfesional,
   },
   {
     id: 6,
     title: 'Diseño Personalizado',
     category: 'Premium',
+    image: diseñoPersonalizado,
   },
 ];
 
@@ -90,13 +102,19 @@ export default function Gallery() {
               variants={itemVariants}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
-              className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer border border-border/30 bg-card/30 backdrop-blur-sm elegant-shadow hover:border-primary/30 hover:subtle-glow"
+              className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer border border-border/30 elegant-shadow hover:border-primary/30 hover:subtle-glow"
             >
-              {/* Subtle background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+              {/* Background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${item.image})` }}
+              ></div>
+
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 group-hover:from-black/95 group-hover:via-black/60 transition-all duration-500"></div>
 
               {/* Content overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/20 group-hover:bg-black/40 transition-all duration-500">
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-8">
                 {/* Title */}
                 <h3 className="text-2xl font-display font-light text-foreground mb-3 text-center tracking-wide transform group-hover:scale-105 transition-transform duration-300">
                   {item.title}

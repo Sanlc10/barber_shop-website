@@ -1,4 +1,4 @@
-# Barbería Urban - Website
+# Barbería Italiana - Website
 
 Un sitio web elegante y minimalista para barbería con diseño refinado y sofisticado. Construido con React, Vite, Tailwind CSS y shadcn/ui.
 

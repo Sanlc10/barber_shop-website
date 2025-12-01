@@ -245,8 +245,8 @@ export default function ContactForm() {
                   <div className="space-y-2">
                     <h3 className="font-display text-xl font-light tracking-wide">Email</h3>
                     <p className="text-muted-foreground font-light">
-                      <a href="mailto:info@barberiaurban.com" className="hover:text-primary transition-colors duration-300">
-                        info@barberiaurban.com
+                      <a href="mailto:info@barberiaitaliana.com" className="hover:text-primary transition-colors duration-300">
+                        info@barberiaitaliana.com
                       </a>
                     </p>
                   </div>
