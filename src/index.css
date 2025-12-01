@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 11%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 38 42% 62%;
+    --primary-foreground: 0 0% 15%;
+
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 38 42% 62%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 38 42% 62%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+
+  /* Custom scrollbar for Chrome, Edge, Safari */
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary) / 0.3),
+      hsl(var(--primary) / 0.4)
+    );
+    border: 1px solid hsl(var(--primary) / 0.2);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.1),
+      0 0 10px hsl(var(--primary) / 0.1);
+    backdrop-filter: blur(10px);
+    margin: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary) / 0.5),
+      hsl(var(--primary) / 0.6)
+    );
+    border: 1px solid hsl(var(--primary) / 0.4);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.15),
+      0 0 15px hsl(var(--primary) / 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary) / 0.6),
+      hsl(var(--primary) / 0.7)
+    );
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.2),
+      0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  /* Custom scrollbar for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--background));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .elegant-shadow {
+    box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.4);
+  }
+
+  .subtle-glow {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.15);
+  }
+
+  .minimal-border {
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
