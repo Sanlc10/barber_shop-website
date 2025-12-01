@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Skill(example-skills:frontend-design)"
+      "Skill(example-skills:frontend-design)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix Open Graph image by moving to public directory\n\n- Moved open_graph.png from src/assets to public/ for static serving\n- Updated meta tags to use absolute URL for og:image and twitter:image\n- Added og:url and twitter:url properties for better social sharing\n- Removed duplicate image from src/assets\n\nThis ensures the preview image appears correctly when sharing on social media platforms.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
