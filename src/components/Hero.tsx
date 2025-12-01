@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
+import heroImage from '../assets/hero.png';
 
 export default function Hero() {
   return (
@@ -7,7 +8,7 @@ export default function Hero() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/src/assets/hero.png)' }}
+        style={{ backgroundImage: `url(${heroImage})` }}
       ></div>
 
       {/* Dark overlay for readability and aesthetic */}
