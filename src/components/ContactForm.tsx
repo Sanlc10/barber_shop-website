@@ -10,9 +10,10 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
-    email: '',
-    fecha: '',
+    barbero: '',
     servicio: '',
+    fecha: '',
+    hora: '',
     mensaje: '',
   });
 
@@ -64,15 +65,15 @@ export default function ContactForm() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-8">
-                  {/* Nombre */}
+                  {/* Nombre del Cliente */}
                   <div className="space-y-3">
                     <label htmlFor="nombre" className="text-sm font-light text-foreground tracking-wide">
-                      Nombre Completo
+                      Nombre del Cliente
                     </label>
                     <Input
                       id="nombre"
                       name="nombre"
-                      placeholder="Tu nombre"
+                      placeholder="Tu nombre completo"
                       value={formData.nombre}
                       onChange={handleChange}
                       required
@@ -80,40 +81,66 @@ export default function ContactForm() {
                     />
                   </div>
 
-                  {/* Teléfono y Email */}
+                  {/* Teléfono de Contacto */}
+                  <div className="space-y-3">
+                    <label htmlFor="telefono" className="text-sm font-light text-foreground tracking-wide">
+                      Teléfono de Contacto <span className="text-muted-foreground text-xs">(opcional)</span>
+                    </label>
+                    <Input
+                      id="telefono"
+                      name="telefono"
+                      type="tel"
+                      placeholder="+34 600 000 000"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      className="bg-background/50"
+                    />
+                  </div>
+
+                  {/* Barbero y Servicio */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-3">
-                      <label htmlFor="telefono" className="text-sm font-light text-foreground tracking-wide">
-                        Teléfono
+                      <label htmlFor="barbero" className="text-sm font-light text-foreground tracking-wide">
+                        Barbero Deseado
                       </label>
-                      <Input
-                        id="telefono"
-                        name="telefono"
-                        type="tel"
-                        placeholder="+34 600 000 000"
-                        value={formData.telefono}
+                      <select
+                        id="barbero"
+                        name="barbero"
+                        value={formData.barbero}
                         onChange={handleChange}
                         required
-                        className="bg-background/50"
-                      />
+                        className="flex h-12 w-full rounded-md border border-input bg-background/50 px-4 py-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all font-light"
+                      >
+                        <option value="">Selecciona un barbero</option>
+                        <option value="marco-rossi">Marco Rossi</option>
+                        <option value="giovanni-conti">Giovanni Conti</option>
+                        <option value="alessandro-bruno">Alessandro Bruno</option>
+                        <option value="luca-ferretti">Luca Ferretti</option>
+                      </select>
                     </div>
                     <div className="space-y-3">
-                      <label htmlFor="email" className="text-sm font-light text-foreground tracking-wide">
-                        Email
+                      <label htmlFor="servicio" className="text-sm font-light text-foreground tracking-wide">
+                        Servicio Deseado
                       </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="tu@email.com"
-                        value={formData.email}
+                      <select
+                        id="servicio"
+                        name="servicio"
+                        value={formData.servicio}
                         onChange={handleChange}
-                        className="bg-background/50"
-                      />
+                        required
+                        className="flex h-12 w-full rounded-md border border-input bg-background/50 px-4 py-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all font-light"
+                      >
+                        <option value="">Selecciona un servicio</option>
+                        <option value="corte">Corte</option>
+                        <option value="barba">Barba</option>
+                        <option value="corte-barba">Corte + Barba</option>
+                        <option value="fade-premium">Fade Premium</option>
+                        <option value="experiencia-vip">Experiencia VIP</option>
+                      </select>
                     </div>
                   </div>
 
-                  {/* Fecha y Servicio */}
+                  {/* Fecha y Hora Preferida */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <label htmlFor="fecha" className="text-sm font-light text-foreground tracking-wide">
@@ -130,30 +157,25 @@ export default function ContactForm() {
                       />
                     </div>
                     <div className="space-y-3">
-                      <label htmlFor="servicio" className="text-sm font-light text-foreground tracking-wide">
-                        Servicio
+                      <label htmlFor="hora" className="text-sm font-light text-foreground tracking-wide">
+                        Hora Preferida
                       </label>
-                      <select
-                        id="servicio"
-                        name="servicio"
-                        value={formData.servicio}
+                      <Input
+                        id="hora"
+                        name="hora"
+                        type="time"
+                        value={formData.hora}
                         onChange={handleChange}
                         required
-                        className="flex h-12 w-full rounded-md border border-input bg-background/50 px-4 py-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all font-light"
-                      >
-                        <option value="">Selecciona un servicio</option>
-                        <option value="corte-clasico">Corte Clásico - $25</option>
-                        <option value="fade-premium">Fade Premium - $35</option>
-                        <option value="afeitado-barba">Afeitado & Barba - $30</option>
-                        <option value="experiencia-vip">Experiencia VIP - $60</option>
-                      </select>
+                        className="bg-background/50"
+                      />
                     </div>
                   </div>
 
-                  {/* Mensaje */}
+                  {/* Mensaje Adicional */}
                   <div className="space-y-3">
                     <label htmlFor="mensaje" className="text-sm font-light text-foreground tracking-wide">
-                      Mensaje (opcional)
+                      Mensaje Adicional <span className="text-muted-foreground text-xs">(opcional)</span>
                     </label>
                     <Textarea
                       id="mensaje"
@@ -168,7 +190,7 @@ export default function ContactForm() {
 
                   {/* Submit button */}
                   <Button type="submit" size="lg" className="w-full">
-                    Enviar Reserva
+                    Confirmar Reserva
                   </Button>
                 </form>
               </CardContent>

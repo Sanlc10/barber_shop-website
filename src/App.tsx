@@ -1,5 +1,6 @@
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Barbers from './components/Barbers';
 import Gallery from './components/Gallery';
 import ContactForm from './components/ContactForm';
 import { Scissors, Menu, X } from 'lucide-react';
@@ -40,6 +41,12 @@ function App() {
                 className="text-sm font-light tracking-wide hover:text-primary transition-colors duration-300"
               >
                 Servicios
+              </button>
+              <button
+                onClick={() => scrollToSection('barberos')}
+                className="text-sm font-light tracking-wide hover:text-primary transition-colors duration-300"
+              >
+                Barberos
               </button>
               <button
                 onClick={() => scrollToSection('galeria')}
@@ -88,6 +95,12 @@ function App() {
                   Servicios
                 </button>
                 <button
+                  onClick={() => scrollToSection('barberos')}
+                  className="block w-full text-left font-light text-base tracking-wide hover:text-primary transition-colors py-2"
+                >
+                  Barberos
+                </button>
+                <button
                   onClick={() => scrollToSection('galeria')}
                   className="block w-full text-left font-light text-base tracking-wide hover:text-primary transition-colors py-2"
                 >
@@ -115,6 +128,7 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <Barbers />
         <Gallery />
         <ContactForm />
       </main>
@@ -147,6 +161,12 @@ function App() {
                   className="block text-muted-foreground hover:text-primary transition-colors text-sm font-light"
                 >
                   Servicios
+                </button>
+                <button
+                  onClick={() => scrollToSection('barberos')}
+                  className="block text-muted-foreground hover:text-primary transition-colors text-sm font-light"
+                >
+                  Barberos
                 </button>
                 <button
                   onClick={() => scrollToSection('galeria')}
